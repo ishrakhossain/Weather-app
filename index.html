@@ -47,10 +47,12 @@
                     const cloud = `${weather.main}`;
                     const temp = data.main
                     const finalTemp = `${temp.temp}`
-                    const kTemp = parseFloat(finalTemp);
+                    let kTemp = parseFloat(finalTemp);
+                    let fTemp = kTemp-273.15;
+                    let final = fTemp.toFixed(1);
                     document.getElementById('sky').innerText = cloud;
                     document.getElementById('city').innerText = inputValue.toUpperCase();
-                    document.getElementById('temperature').innerHTML = kTemp-273.15 + '&#8451';
+                    document.getElementById('temperature').innerHTML =  final + '&#8451';
                     
                 
         })
